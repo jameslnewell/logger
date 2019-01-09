@@ -1,0 +1,20 @@
+{
+  "name": "@jameslnewell/logger",
+  "version": "1.0.0",
+  "description": "A logging library.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "aws-sdk": "^2.384.0",
+    "chalk": "^2.4.1",
+    "string-to-color": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "example": "ts-node example/index"
+  },
+  "license": "MIT"
+}
