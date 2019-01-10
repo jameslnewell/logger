@@ -24,17 +24,17 @@ export class Logger {
   }
 
   info(data: any): Logger {
-    this.log(Level.info, data);
+    this.log(Level.INFORMATION, data);
     return this;
   }
 
   warn(data: any): Logger {
-    this.log(Level.warning, data);
+    this.log(Level.WARNING, data);
     return this;
   }
 
   error(data: any): Logger {
-    this.log(Level.error, data);
+    this.log(Level.ERROR, data);
     return this;
   }
 

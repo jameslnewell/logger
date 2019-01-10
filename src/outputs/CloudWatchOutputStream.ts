@@ -5,6 +5,8 @@ import { Log } from '../log';
 export interface CloudWatchOutputStreamOptions {
   group: string;
   stream: string;
+  debounce?: number;
+  cloudwatch?: CloudWatchLogs.ClientConfiguration;
 }
 
 export class CloudWatchOutputStream extends Writable {
@@ -12,10 +14,11 @@ export class CloudWatchOutputStream extends Writable {
   private logs: Log[] = [];
   private timeout: NodeJS.Timeout = null;
   private sequence: string = undefined;
-  private cloudwatch: CloudWatchLogs = new CloudWatchLogs({region: 'ap-southeast-2'});
+  private cloudwatch: CloudWatchLogs = undefined;
 
   constructor(private options: CloudWatchOutputStreamOptions) {
     super({objectMode: true});
+    this.cloudwatch = new CloudWatchLogs(options.cloudwatch);
   }
 
   _putEvents = async () => {
@@ -43,7 +46,7 @@ export class CloudWatchOutputStream extends Writable {
         sequenceToken: this.sequence,
         logGroupName: this.options.group,
         logStreamName: this.options.stream,
-        logEvents: this.logs.map(log => ({
+        logEvents: this.logs.sort((a, b) => (a.time > b.time ? 1 : -1)).map(log => ({
           timestamp: log.time,
           message: JSON.stringify(log)
         }))
@@ -60,7 +63,7 @@ export class CloudWatchOutputStream extends Writable {
   _write(chunk: any, encoding: string, callback: (error?: Error) => void) {
     this.logs.push(chunk);
     clearTimeout(this.timeout);
-    this.timeout = setTimeout(this._putEvents, 250);
+    this.timeout = setTimeout(this._putEvents, this.options.debounce || 250);
     callback();
   }
 

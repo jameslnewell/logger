@@ -4,14 +4,16 @@ import {Log} from './Log';
 export class Stream extends Readable {
 
   constructor() {
-    super({objectMode: true});
+    super({
+      objectMode: true
+    });
   }
 
   log(log: Log) {
     this.push(log);
   }
 
-  _read() {
+  _read(size: number): void {
   }
 
 }

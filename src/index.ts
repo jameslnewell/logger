@@ -10,4 +10,4 @@ export * from './outputs';
 import {GlobalLogger} from './GlobalLogger';
 import { Stream } from './Stream';
 
-export default new GlobalLogger(new Stream);
+export default new GlobalLogger(new Stream());

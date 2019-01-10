@@ -32,7 +32,8 @@ const memory = logger.pipe(new MemoryOutputStream());
 // stream logs to cloudwatch
 logger.pipe(new CloudWatchOutputStream({
   group: 'my-group', 
-  stream: 'my-stream'
+  stream: 'my-stream',
+  cloudwatch: {region: 'ap-southeast-2'}
 })).on('error', console.error);
 
 // print the logs if we're in verbose mode

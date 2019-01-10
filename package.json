@@ -4,17 +4,26 @@
   "description": "A logging library.",
   "main": "lib/index.js",
   "dependencies": {
+    "@types/read-pkg": "^3.0.0",
     "aws-sdk": "^2.384.0",
+    "aws-sdk-mock": "^4.3.0",
+    "caller-path": "^2.0.0",
     "chalk": "^2.4.1",
+    "read-pkg": "^4.0.1",
     "string-to-color": "^2.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.12",
     "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   },
   "scripts": {
-    "example": "ts-node example/index"
+    "example": "ts-node example/index",
+    "build": "tsc",
+    "test": "jest"
   },
   "license": "MIT"
 }

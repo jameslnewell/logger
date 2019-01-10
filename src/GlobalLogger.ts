@@ -1,6 +1,6 @@
 
 import {Writable} from 'stream';
-import {Logger} from "./logger";
+import {Logger} from "./Logger";
 import {name as namePlugin} from './plugins'
 import { run } from './plugins/run';
 

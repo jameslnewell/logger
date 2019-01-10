@@ -16,7 +16,7 @@ export class DefaultFormatter implements Formatter {
   format(log) {
     const ctx = new chalk.constructor({enabled: this.options.colors});
     const {level, name, time, data, ...meta} = log;
-    const emoji = level === Level.info ? 'ℹ️  ' : level === Level.warning ? '⚠️  ' : level === Level.error ? '❌ ' : '';
+    const emoji = level === Level.INFORMATION ? 'ℹ️  ' : level === Level.WARNING ? '⚠️  ' : level === Level.ERROR ? '❌ ' : '';
     const n = name ? `${ctx.hex(colorize(name)).bold(name)} ` : '';
     const t = time ? `${ctx.grey.bold(new Date(time).toISOString())} ` : '';
     const d = typeof data === 'string' ? `${data} ` : `${inspect(data)} `;

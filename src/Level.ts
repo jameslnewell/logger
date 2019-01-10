@@ -1,10 +1,10 @@
 export const enum Level { 
-  emerg = 0,
-  alert = 1, 
-  crit = 2, 
-  error = 3, 
-  warning = 4, 
-  notice = 5, 
-  info = 6, 
-  debug = 7
+  EMERGENCY = 0,
+  ALERT = 1, 
+  CRITICAL = 2, 
+  ERROR = 3, 
+  WARNING = 4, 
+  NOTICE = 5, 
+  INFORMATION = 6, 
+  DEBUG = 7
 }
