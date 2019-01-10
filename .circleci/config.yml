@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.0.0
+      - image: circleci/node:8
     steps:
       - checkout
       - run:
@@ -10,4 +10,4 @@ jobs:
           command: yarn
       - run:
           name: test
-          command: yarn test
+          command: CI=true yarn test --maxWorkers=2
