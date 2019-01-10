@@ -10,4 +10,4 @@ jobs:
           command: yarn
       - run:
           name: test
-          command: CI=true yarn test --maxWorkers=2
+          command: yarn test --maxWorkers=2

@@ -23,7 +23,8 @@
   "scripts": {
     "example": "ts-node example/index",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "publish": "yarn run build && yarn run test"
   },
   "license": "MIT"
 }
