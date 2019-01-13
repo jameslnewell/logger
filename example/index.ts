@@ -18,7 +18,7 @@ logger
   .use(filter(log => {
     const pattern = process.env.DEBUG;
     if (pattern) {
-      return log.name && log.name.includes(pattern);
+      return log.source && log.source.includes(pattern);
     } else {
       return true;
     }

@@ -7,19 +7,19 @@ import { doesNotReject } from 'assert';
 describe('GlobalLogger', () => {
 
   describe('.extend()', () => {
-    it('should inject a name', () => {
+    it('should inject a source', () => {
       const stream = new Stream();
       const global = new GlobalLogger(stream);
       const logger = global.extend('foobar');
       logger.info('You are amazing!');
       expect(stream.read()).toEqual({
         level: Level.INFORMATION,
-        name: 'foobar',
+        source: 'foobar',
         data: 'You are amazing!'
       });
     });
 
-    it('should not inject a name', () => {
+    it('should not inject a source', () => {
       const stream = new Stream();
       const global = new GlobalLogger(stream);
       const logger = global.extend();

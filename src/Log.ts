@@ -1,7 +1,7 @@
 import { Level } from "./Level";
 
 export type Log = {
-  name?: string;
+  source?: string;
   level: Level;
   data: any;
   [name: string]: any;
