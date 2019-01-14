@@ -1,7 +1,7 @@
 import { Writable } from 'stream';
 import { Log } from '../log';
 import {DefaultFormatter } from '../formatters';
-import { Formatter } from '../formatter';
+import { Formatter } from '../Formatter';
 
 const defaultFormatter = new DefaultFormatter({colors: false});
 

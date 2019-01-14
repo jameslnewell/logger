@@ -1,6 +1,6 @@
 {
   "name": "@jameslnewell/logger",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A logging library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

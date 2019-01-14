@@ -1,6 +1,6 @@
 import { Writable } from 'stream';
 import {DefaultFormatter} from '../formatters'
-import { Formatter } from '../formatter';
+import { Formatter } from '../Formatter';
 
 const defaultOptions = {
   formatter: new DefaultFormatter()
