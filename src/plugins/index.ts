@@ -1,3 +1,3 @@
 export * from './time';
 export * from './filter';
-export * from './version';
+export * from './pkginfo';
