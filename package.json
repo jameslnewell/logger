@@ -1,6 +1,6 @@
 {
   "name": "@jameslnewell/logger",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A logging library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,7 @@
     "aws-sdk-mock": "^4.3.0",
     "caller-path": "^2.0.0",
     "chalk": "^2.4.1",
-    "read-pkg-up": "^4.0.1",
+    "read-pkg-up": "^4.0.0",
     "string-to-color": "^2.0.1"
   },
   "devDependencies": {
